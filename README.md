@@ -57,7 +57,7 @@ launch {
 
     signal "=== Jet Startup Sequence Initiated ==="
 
-    lock (engineOn ++)(fuel > 0) {
+    lock (engineOn ++ fuel > 0) {
         signal "Engine status: OK"
     } elsejet {
         signal "Engine failure detected!"
