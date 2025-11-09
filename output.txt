@@ -1,104 +1,104 @@
-<keyword_main launch>
-<block_start>
-<datatype_int target>
-<identifier speed>
-<op_assign assign>
-<integer 0>
-<datatype_float altitude>
-<identifier fuel>
-<op_assign assign>
-<float 55.7>
-<datatype_string airspeed>
-<identifier jetName>
-<op_assign assign>
-<string "F16 Falcon">
-<identifier Charcode>
-<identifier grade>
-<op_assign assign>
-<char 'A'>
-<identifier Switch>
-<identifier engineOn>
-<op_assign assign>
-<identifier true>
-<keyword_print signal>
-<string "=== Jet Startup Sequence Initiated ===">
-<keyword_if lock>
-<paren_open>
-<identifier engineOn>
-<op_and ++>
-<identifier fuel>
-<op_gt>
-<integer 0>
-<paren_close>
-<block_start>
-<keyword_print signal>
-<string "Engine status: OK">
-<block_end>
-<keyword_else elsejet>
-<block_start>
-<keyword_print signal>
-<string "Engine failure detected!">
-<keyword_break eject>
-<block_end>
-<keyword_print signal>
-<string "Enter required takeoff speed:">
-<keyword_input readjet>
-<identifier speed>
-<keyword_for_loop loopback>
-<paren_open>
-<identifier speed>
-<op_assign assign>
-<integer 0>
-<semicolon>
-<identifier speed>
-<op_lt>
-<integer 3>
-<semicolon>
-<identifier speed>
-<op_increment ^^>
-<paren_close>
-<block_start>
-<keyword_print signal>
-<string "Accelerating...">
-<block_start>
-<keyword_while_loop runway>
-<paren_open>
-<identifier speed>
-<op_lt>
-<integer 10>
-<paren_close>
-<block_start>
-<keyword_print signal>
-<string "Increasing thrust...">
-<identifier speed>
-<op_increment ^^>
-<block_end>
-<keyword_increment afterburn>
-<identifier speed>
-<op_increment ^^>
-<identifier Stall>
-<keyword_array flightpath>
-<identifier destinations>
-<op_assign assign>
-<array_open>
-<string "Berlin">
-<comma>
-<string "Tokyo">
-<comma>
-<string "NewYork">
-<array_close>
-<keyword_function_def mission>
-<identifier fly>
-<paren_open>
-<paren_close>
-<block_start>
-<keyword_print signal>
-<string "Jet is now airborne!">
-<keyword_return debrief>
-<identifier speed>
-<block_end>
-<keyword_function_call engage>
-<identifier fly>
-<paren_open>
-<paren_close>
-<block_end>
+Line 1: <keyword_main> → launch
+Line 1: <block_start> → {
+Line 2: <datatype_int> → target
+Line 2: <identifier> → speed
+Line 2: <op_assign> → assign
+Line 2: <integer> → 0
+Line 3: <datatype_float> → altitude
+Line 3: <identifier> → fuel
+Line 3: <op_assign> → assign
+Line 3: <float> → 55.7
+Line 4: <datatype_string> → airspeed
+Line 4: <identifier> → jetName
+Line 4: <op_assign> → assign
+Line 4: <string> → "F16 Falcon"
+Line 5: <identifier> → Charcode
+Line 5: <identifier> → grade
+Line 5: <op_assign> → assign
+Line 5: <char> → 'A'
+Line 6: <identifier> → Switch
+Line 6: <identifier> → engineOn
+Line 6: <op_assign> → assign
+Line 6: <identifier> → true
+Line 7: <keyword_print> → signal
+Line 7: <string> → "=== Jet Startup Sequence Initiated ==="
+Line 8: <keyword_if> → lock
+Line 8: <paren_open> → (
+Line 8: <identifier> → engineOn
+Line 8: <op_and> → ++
+Line 8: <identifier> → fuel
+Line 8: <op_gt> → >
+Line 8: <integer> → 0
+Line 8: <paren_close> → )
+Line 8: <block_start> → {
+Line 9: <keyword_print> → signal
+Line 9: <string> → "Engine status: OK"
+Line 10: <block_end> → }
+Line 10: <keyword_else> → elsejet
+Line 10: <block_start> → {
+Line 11: <keyword_print> → signal
+Line 11: <string> → "Engine failure detected!"
+Line 12: <keyword_break> → eject
+Line 13: <block_end> → }
+Line 14: <keyword_print> → signal
+Line 14: <string> → "Enter required takeoff speed:"
+Line 15: <keyword_input> → readjet
+Line 15: <identifier> → speed
+Line 16: <keyword_for_loop> → loopback
+Line 16: <paren_open> → (
+Line 16: <identifier> → speed
+Line 16: <op_assign> → assign
+Line 16: <integer> → 0
+Line 16: <semicolon> → ;
+Line 16: <identifier> → speed
+Line 16: <op_lt> → <
+Line 16: <integer> → 3
+Line 16: <semicolon> → ;
+Line 16: <identifier> → speed
+Line 16: <op_increment> → ^^
+Line 16: <paren_close> → )
+Line 16: <block_start> → {
+Line 17: <keyword_print> → signal
+Line 17: <string> → "Accelerating..."
+Line 18: <block_start> → {
+Line 19: <keyword_while_loop> → runway
+Line 19: <paren_open> → (
+Line 19: <identifier> → speed
+Line 19: <op_lt> → <
+Line 19: <integer> → 10
+Line 19: <paren_close> → )
+Line 19: <block_start> → {
+Line 20: <keyword_print> → signal
+Line 20: <string> → "Increasing thrust..."
+Line 21: <identifier> → speed
+Line 21: <op_increment> → ^^
+Line 22: <block_end> → }
+Line 23: <keyword_increment> → afterburn
+Line 23: <identifier> → speed
+Line 23: <op_increment> → ^^
+Line 24: <identifier> → Stall
+Line 25: <keyword_array> → flightpath
+Line 25: <identifier> → destinations
+Line 25: <op_assign> → assign
+Line 25: <array_open> → [
+Line 25: <string> → "Berlin"
+Line 25: <comma> → ,
+Line 25: <string> → "Tokyo"
+Line 25: <comma> → ,
+Line 25: <string> → "NewYork"
+Line 25: <array_close> → ]
+Line 26: <keyword_function_def> → mission
+Line 26: <identifier> → fly
+Line 26: <paren_open> → (
+Line 26: <paren_close> → )
+Line 26: <block_start> → {
+Line 27: <keyword_print> → signal
+Line 27: <string> → "Jet is now airborne!"
+Line 28: <keyword_return> → debrief
+Line 28: <identifier> → speed
+Line 29: <block_end> → }
+Line 30: <keyword_function_call> → engage
+Line 30: <identifier> → fly
+Line 30: <paren_open> → (
+Line 30: <paren_close> → )
+Line 31: <block_end> → }
