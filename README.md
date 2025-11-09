@@ -1,3 +1,6 @@
+
+<img width="1024" height="1024" alt="Mavlang_LOGO" src="https://github.com/user-attachments/assets/f27b73ca-bdd8-4bdc-9790-d542185eb5e9" />
+
 # MavLang: A Mini Aviation-Themed Programming Language
 
 MavLang is a custom, case-sensitive mini programming language inspired by **Maverick and the Top Gun universe**. It uses aviation-themed keywords and syntax to represent common programming constructs such as conditions, loops, functions, variables, and input/output.
