@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int line_num = 1;  // To keep track of line numbers
+int line_num = 1; 
 %}
 
 %%
@@ -51,8 +51,8 @@ int line_num = 1;  // To keep track of line numbers
 [0-9]+          { printf("Line %d: <integer> → %s\n", line_num, yytext); }
 [a-zA-Z_][a-zA-Z0-9_]* { printf("Line %d: <identifier> → %s\n", line_num, yytext); }
 
-[\n]+          { line_num++; }   // Increment line number
-[\t ]+         { }               // Ignore spaces and tabs
+[\n]+          { line_num++; }   
+[\t ]+         { }               
 
 .               { printf("Line %d: <unknown> → %s\n", line_num, yytext); }
 
