@@ -1,0 +1,104 @@
+<keyword_main launch>
+<block_start>
+<datatype_int target>
+<identifier speed>
+<op_assign assign>
+<integer 0>
+<datatype_float altitude>
+<identifier fuel>
+<op_assign assign>
+<float 55.7>
+<datatype_string airspeed>
+<identifier jetName>
+<op_assign assign>
+<string "F16 Falcon">
+<identifier Charcode>
+<identifier grade>
+<op_assign assign>
+<char 'A'>
+<identifier Switch>
+<identifier engineOn>
+<op_assign assign>
+<identifier true>
+<keyword_print signal>
+<string "=== Jet Startup Sequence Initiated ===">
+<keyword_if lock>
+<paren_open>
+<identifier engineOn>
+<op_and ++>
+<identifier fuel>
+<op_gt>
+<integer 0>
+<paren_close>
+<block_start>
+<keyword_print signal>
+<string "Engine status: OK">
+<block_end>
+<keyword_else elsejet>
+<block_start>
+<keyword_print signal>
+<string "Engine failure detected!">
+<keyword_break eject>
+<block_end>
+<keyword_print signal>
+<string "Enter required takeoff speed:">
+<keyword_input readjet>
+<identifier speed>
+<keyword_for_loop loopback>
+<paren_open>
+<identifier speed>
+<op_assign assign>
+<integer 0>
+<semicolon>
+<identifier speed>
+<op_lt>
+<integer 3>
+<semicolon>
+<identifier speed>
+<op_increment ^^>
+<paren_close>
+<block_start>
+<keyword_print signal>
+<string "Accelerating...">
+<block_start>
+<keyword_while_loop runway>
+<paren_open>
+<identifier speed>
+<op_lt>
+<integer 10>
+<paren_close>
+<block_start>
+<keyword_print signal>
+<string "Increasing thrust...">
+<identifier speed>
+<op_increment ^^>
+<block_end>
+<keyword_increment afterburn>
+<identifier speed>
+<op_increment ^^>
+<identifier Stall>
+<keyword_array flightpath>
+<identifier destinations>
+<op_assign assign>
+<array_open>
+<string "Berlin">
+<comma>
+<string "Tokyo">
+<comma>
+<string "NewYork">
+<array_close>
+<keyword_function_def mission>
+<identifier fly>
+<paren_open>
+<paren_close>
+<block_start>
+<keyword_print signal>
+<string "Jet is now airborne!">
+<keyword_return debrief>
+<identifier speed>
+<block_end>
+<keyword_function_call engage>
+<identifier fly>
+<paren_open>
+<paren_close>
+<block_end>

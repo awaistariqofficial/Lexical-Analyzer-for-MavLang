@@ -1,0 +1,42 @@
+launch  {
+
+    target speed assign 0
+    altitude fuel assign 55.7
+    airspeed jetName assign "F16 Falcon"
+    Charcode grade assign 'A'
+    Switch engineOn assign true
+
+    signal "=== Jet Startup Sequence Initiated ==="
+
+    lock (engineOn ++ fuel > 0) {
+        signal "Engine status: OK"
+    } elsejet {
+        signal "Engine failure detected!"
+        eject
+    }
+
+    signal "Enter required takeoff speed:"
+    readjet speed
+
+    loopback (speed assign 0; speed < 3; speed ^^) {
+        signal "Accelerating..."
+    {
+
+    runway (speed < 10) {
+        signal "Increasing thrust..."
+        speed ^^
+    }
+
+    afterburn speed ^^
+    Stall
+
+    flightpath destinations assign ["Berlin","Tokyo","NewYork"]
+
+    mission fly() {
+        signal "Jet is now airborne!"
+        debrief speed
+    }
+
+    engage fly()
+
+}
